@@ -20,7 +20,7 @@ class Main(models.Model):
     buyer_region = models.CharField(max_length=255, null=True)
     buyer_rayon = models.CharField(max_length=255, null=True)
     buyer_address = models.CharField(max_length=255, null=True)
-    # user = models.ForeignKey(User, verbose_name='User', on_delete=models.CASCADE)
+
 
 
     def __str__(self):
@@ -42,7 +42,6 @@ class Products(models.Model):
     tnvd_code = models.CharField(max_length=255, null=True)
     expend_id = models.CharField(max_length=255, null=True)
     plan_position_id = models.IntegerField(null=True)
-    # user = models.ForeignKey(User, verbose_name='User', on_delete=models.CASCADE)
 
     def __str__(self):
         return self.art_id
