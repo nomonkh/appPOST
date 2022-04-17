@@ -1,15 +1,16 @@
 from django.contrib.auth.models import User
 from django.db import models
 
+
 # Create your models here.
 class Main(models.Model):
-    lot_id = models.CharField(max_length=255, null=True)
+    lot_id = models.CharField(max_length=255,  primary_key=True)
     lot_name = models.CharField(max_length=255, null=True)
     lot_status = models.CharField(max_length=255, null=True)
     lot_dateini = models.DateTimeField(null=True)
     lot_date_end = models.DateTimeField(null=True)
     lot_group = models.CharField(max_length=255, null=True)
-    seller_name =  models.CharField(max_length=255, null=True)
+    seller_name = models.CharField(max_length=255, null=True)
     seller_inn = models.CharField(max_length=255, null=True)
     seller_region = models.CharField(max_length=255, null=True)
     seller_rayon = models.CharField(max_length=255, null=True)
@@ -21,8 +22,6 @@ class Main(models.Model):
     buyer_rayon = models.CharField(max_length=255, null=True)
     buyer_address = models.CharField(max_length=255, null=True)
 
-
-
     def __str__(self):
         return self.lot_id
 
@@ -30,10 +29,11 @@ class Main(models.Model):
         managed = True
         db_table = 'dxarid\".\"main'
 
+
 class Products(models.Model):
     lot_id = models.CharField(max_length=255, null=True)
-    art_id = models.IntegerField( null=True)
-    p_product_name =  models.CharField(max_length=255, null=True)
+    art_id = models.IntegerField(null=True)
+    p_product_name = models.CharField(max_length=255, null=True)
     measure_gnk = models.CharField(max_length=255, null=True)
     quantity = models.IntegerField(null=True)
     one_price = models.IntegerField(null=True)
@@ -49,5 +49,3 @@ class Products(models.Model):
     class Meta():
         managed = True
         db_table = 'dxarid\".\"products'
-
-
