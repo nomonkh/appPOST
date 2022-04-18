@@ -25,5 +25,5 @@ def get_post(request):
                 'data': 'empty' if len(list(lst)) == 0 else lst
         })
     elif request.method == 'POST':
-        post(request.data)
+        post.delay(request.data)
         return Response({'message': [ids['lot_info']['id'] for ids in request.data]})

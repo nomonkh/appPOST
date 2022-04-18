@@ -3,12 +3,10 @@ from appAPI.celery import app
 from .models import Main, Products
 
 
-
-@app.task(name='post_test_api')
+@app.task(name='post_test_app')
 def post(request):
     objs_main = []
     obj_prods = []
-    print(request)
     for item in request:
         m = Main(
             lot_id=item['lot_info']['id'],
